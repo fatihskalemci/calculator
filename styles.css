@@ -1,0 +1,72 @@
+html {
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.calculator {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 20%;
+    gap: 10px;
+}
+
+.row {
+    display: flex;
+    justify-content: space-around;
+    gap: 10px;
+}
+
+
+button {
+    font-size: 60px;
+    line-height: 60px;
+    padding: 16px 8px;
+    border-radius: 25px;
+    flex-basis: 25%;
+}
+
+#zero {
+    flex-grow: 5;
+}
+
+#point, #equal {
+    flex-grow: 2;
+}
+
+.operator {
+    color: rgb(119, 31, 65);
+    background-image: linear-gradient(to right, rgb(164, 28, 123) 0%, rgb(203, 35, 63) 50%, rgb(20, 78, 117) 100%);
+    box-shadow: rgb(0, 0, 0) 5px 5px 15px 5px;
+    border: 0px solid rgb(28, 110, 164);
+    display: inline-block;
+}
+.operator:hover {
+    background: white;
+ }
+.operator:active {
+    background: #24041c; 
+}
+
+.operand {
+    color: rgb(119, 31, 65);
+    background-image: linear-gradient(to right, rgb(28, 110, 164) 0%, rgb(35, 136, 203) 50%, rgb(20, 78, 117) 100%);
+    box-shadow: rgb(0, 0, 0) 5px 5px 15px 5px;
+    border: 0px solid rgb(28, 110, 164);
+    display: inline-block;
+}
+.operand:hover {
+    background: #1C6EA4;
+ }
+.operand:active {
+    background: #144E75; 
+}
