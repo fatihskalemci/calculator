@@ -34,12 +34,7 @@ const operationButtons = document.querySelectorAll(".operation");
 
 const equalButton = document.querySelector("#equal");
 equalButton.addEventListener('click', () => {
-    topDisplay.textContent = bottomDisplay.textContent;
-    operand1 = operate(operator, operand1, operand2);
-    operand2 = "";
-    operator = "";
-    updateBottomDisplay()
-
+    equalate()
 });
 
 // Functions
@@ -70,7 +65,7 @@ function operate(operator, a, b) {
     b = +b;
     switch (operator) {
         case "+":
-            return add(a+b)
+            return add(a,b)
             break;
         case "-":
             return subtract(a,b)
@@ -87,6 +82,14 @@ function operate(operator, a, b) {
         default:
             break;
     }
+}
+
+function equalate() {
+    topDisplay.textContent = bottomDisplay.textContent;
+    operand1 = operate(operator, operand1, operand2);
+    operand2 = "";
+    operator = "";
+    updateBottomDisplay();
 }
 
 function updateBottomDisplay() {
@@ -114,6 +117,9 @@ function getOperator(value) {
     if (bottomDisplay.textContent.length >= 10) {return}
 
     if (operand2 === "") {
+        operator = value.toString();
+    } else {
+        equalate()
         operator = value.toString();
     }
     updateBottomDisplay();
