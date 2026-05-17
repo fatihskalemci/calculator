@@ -145,7 +145,7 @@ function getOperator(value) {
     if (operand1 === "") {
         operand1 = "0";
     }
-    else if (!operand2 === "") {
+    else if (operand2 !== "") {
         equalate()
     }
     operator = value.toString();
