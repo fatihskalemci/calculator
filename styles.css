@@ -16,19 +16,23 @@ body {
 .calculator {
     display: flex;
     flex-direction: column;
-    flex-basis: 20%;
-    gap: 10px;
+    flex-basis: 500px;
+    gap: 5px;
+    border: solid 1px;
+    padding: 10px;
+    border-radius: 25px;
+    background-color: #171616;
 }
 
 .row {
     display: flex;
     justify-content: space-around;
-    gap: 10px;
+    gap: 5px;
 }
 
 
 button {
-    font-size: 60px;
+    font-size: 40px;
     line-height: 60px;
     padding: 16px 8px;
     border-radius: 25px;
@@ -36,37 +40,74 @@ button {
 }
 
 #zero {
-    flex-grow: 5;
+    flex-basis: 35%;
 }
 
-#point, #equal {
-    flex-grow: 2;
+#point {
+    flex-basis: 35%;
 }
+
+
+.display {
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 20px;
+    margin-bottom: 10px;
+}
+
+.display p {
+    padding-right: 10px;
+    margin: 0;
+    text-align: end;
+    color: whitesmoke;
+    flex-grow: 1;
+    padding-top: 5px;
+}
+
+#top {
+    height: 70px;
+    font-size: 60px;
+    background-color: #787171;
+    border-top-left-radius: inherit;
+    border-top-right-radius: inherit;
+}
+
+#bottom {
+    height: 120px;
+    font-size:80px;
+    background-color: #575050;
+    border-bottom-left-radius: inherit;
+    border-bottom-right-radius: inherit;
+    font-weight: bold;
+}
+
+/* calculator buttons' coloring and shading */
 
 .operator {
-    color: rgb(119, 31, 65);
-    background-image: linear-gradient(to right, rgb(164, 28, 123) 0%, rgb(203, 35, 63) 50%, rgb(20, 78, 117) 100%);
+    color: whitesmoke;
+    background-image: linear-gradient(to right, rgb(36, 4, 28) 0%, rgb(203, 35, 63) 50%, rgb(36, 4, 28) 100%);
     box-shadow: rgb(0, 0, 0) 5px 5px 15px 5px;
     border: 0px solid rgb(28, 110, 164);
     display: inline-block;
 }
 .operator:hover {
-    background: white;
+    background: rgb(203, 35, 63);
  }
 .operator:active {
     background: #24041c; 
 }
 
 .operand {
-    color: rgb(119, 31, 65);
-    background-image: linear-gradient(to right, rgb(28, 110, 164) 0%, rgb(35, 136, 203) 50%, rgb(20, 78, 117) 100%);
+    color: whitesmoke;
+    background-image: linear-gradient(to right, rgb(20, 78, 117) 0%, rgb(35, 136, 203) 50%, rgb(20, 78, 117) 100%);
     box-shadow: rgb(0, 0, 0) 5px 5px 15px 5px;
     border: 0px solid rgb(28, 110, 164);
     display: inline-block;
 }
 .operand:hover {
-    background: #1C6EA4;
+    background: rgb(35, 136, 203);
  }
 .operand:active {
-    background: #144E75; 
+    background: #051925; 
 }
