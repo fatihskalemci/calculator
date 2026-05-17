@@ -101,8 +101,10 @@ function getNumber(value) {
     if (bottomDisplay.textContent.length >= 10) {return}
 
     if (operator === "") {
+        if (value === "." && operand1.includes(".")) {return}
         operand1 += value.toString();
     } else {
+        if (value === "." && operand2.includes(".")) {return}
         operand2 += value.toString();
     }
     updateBottomDisplay();
