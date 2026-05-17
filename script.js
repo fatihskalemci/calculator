@@ -121,10 +121,20 @@ function getNumber(value) {
 
     if (operator === "") {
         if (value === "." && operand1.includes(".")) {return}
-        operand1 += value.toString();
+        if (operand1 === "0") {
+            operand1 = value.toString();
+        }
+        else {
+            operand1 += value.toString();
+        }
     } else {
         if (value === "." && operand2.includes(".")) {return}
-        operand2 += value.toString();
+        if (operand2 === "0") {
+            operand2 = value.toString();
+        } 
+        else {
+            operand2 += value.toString();
+        }
     }
     updateBottomDisplay();
 }
@@ -132,12 +142,13 @@ function getNumber(value) {
 function getOperator(value) {
     if (bottomDisplay.textContent.length >= 10) {return}
 
-    if (operand2 === "") {
-        operator = value.toString();
-    } else {
-        equalate()
-        operator = value.toString();
+    if (operand1 === "") {
+        operand1 = "0";
     }
+    else if (!operand2 === "") {
+        equalate()
+    }
+    operator = value.toString();
     updateBottomDisplay();
 }
 
