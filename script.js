@@ -34,7 +34,7 @@ const operationButtons = document.querySelectorAll(".operation");
 
 const equalButton = document.querySelector("#equal");
 equalButton.addEventListener('click', () => {
-    if (bottomDisplay.textContent === "0") {return}
+    if (bottomDisplay.textContent === "0" || operand2 === "") {return}
     equalate()
 });
 
