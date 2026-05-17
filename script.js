@@ -34,7 +34,23 @@ const operationButtons = document.querySelectorAll(".operation");
 
 const equalButton = document.querySelector("#equal");
 equalButton.addEventListener('click', () => {
+    if (bottomDisplay.textContent === "0") {return}
     equalate()
+});
+
+const backspace = document.querySelector("#backspace");
+backspace.addEventListener('click', () => {
+    if (operand2 !== "") {
+        operand2 = operand2.slice(0, -1);
+    } else if (operator !== "") {
+        operator = operator.slice(0, -1);
+    } else if (operand1 !== "") {
+        operand1 = operand1.slice(0, -1);
+    } else {
+        return
+    }
+    updateBottomDisplay();
+
 });
 
 // Functions
